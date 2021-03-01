@@ -50,9 +50,9 @@ public class SolutionTest {
         	1000.0);
         
         assertEquals(100.0, accountHolder.getCheckingAccount().getBalance(), 0);
-        assertEquals(0.0001, accountHolder.getCheckingAccount().getInterestRate(), 0);
+        assertEquals(0.0001, accountHolder.getCheckingAccount().getInterest(), 0);
         assertEquals(1000.0, accountHolder.getSavingsAccount().getBalance(), 0);
-        assertEquals(0.01, accountHolder.getSavingsAccount().getInterestRate(), 0);
+        assertEquals(0.0001, accountHolder.getSavingsAccount().getInterest(), 0);
     }
 
     @Test
@@ -143,7 +143,7 @@ public class SolutionTest {
         	100.0,
         	100.0);
 
-        double fv = 100.0 * Math.pow(1 + 0.01, 3);
+        double fv = 100.0 * Math.pow(1 + 0.0001, 3);
         
         assertEquals(fv, accountHolder.getSavingsAccount().futureValue(3), 0);
     }
